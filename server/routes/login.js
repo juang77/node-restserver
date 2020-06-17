@@ -12,7 +12,7 @@ app.post('/login', (req, res) => {
 
     let body = req.body;
 
-    usuario.findOne({ email: body.email }, (err, usuarioBD) => {
+    Usuario.findOne({ email: body.email }, (err, usuarioBD) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
@@ -121,7 +121,7 @@ app.post('/google', async(req, res) => {
             usuario.password = ':)';
 
 
-            usuario.save((err, usuarioBD) => {
+            Usuario.save((err, usuarioBD) => {
                 if (err) {
                     return res.status(500).json({
                         ok: false,
