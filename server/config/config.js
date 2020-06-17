@@ -23,6 +23,11 @@ process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
 
 
 //================================
+//GOOGLE CLient ID
+//================================
+process.env.CLIENT_ID = process.env.CLIENT_ID || '773016055504-9o1vomcqog0235gqcoqogaledic0ls3d.apps.googleusercontent.com';
+
+//================================
 //BASE DE DATOS
 //================================
 let urlDB;

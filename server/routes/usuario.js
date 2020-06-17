@@ -58,7 +58,7 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
         role: body.role
     });
 
-    usuario.save((err, usuarioDB) => {
+    usuario.save((err, usuarioBD) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -68,7 +68,7 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
 
         res.json({
             ok: true,
-            usuario: usuarioDB
+            usuario: usuarioBD
         });
 
     });
@@ -79,7 +79,7 @@ app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) 
     let id = req.params.id;
     let body = _.pick(req.body, ['nombre', 'email', 'img', 'ole', 'estado']);
 
-    usuario.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, usuarioDB) => {
+    usuario.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, usuarioBD) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -88,7 +88,7 @@ app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) 
         };
         res.json({
             ok: true,
-            usuario: usuarioDB
+            usuario: usuarioBD
         });
     });
 
